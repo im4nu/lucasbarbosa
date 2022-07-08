@@ -1,0 +1,210 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --btn-color: hsl(240, 37%, 37%);
+  --txt-color: white;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  color: var(--txt-color);
+  box-shadow: var(--star);
+  transition: all, ease 1.5s;
+}
+.centralizado {
+  margin: auto;
+  max-width: 700px;
+  margin-top: 4.4rem;
+  overflow: hidden;
+}
+
+/*Animações*/
+.animate__heartBea {
+  animation: heartBeat;
+  animation-duration: 0.8s;
+}
+.animate__flipInX {
+  animation: flipInX;
+  animation-duration: 1s;
+}
+
+/*=======PAGE CONTENT=======*/
+header {
+  display: flex;
+  margin-top: 0.5%;
+
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1.6rem 8rem;
+  gap: 1rem;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 16px 80px;
+  gap: 10px;
+}
+.container a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 300px;
+  height: 53px;
+
+  background: var(--btn-color);
+  border-radius: 6px;
+
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  color: white;
+
+  transition: all, ease-in 0.5s;
+}
+.container a:hover {
+  background-color: hsl(240, 87%, 79%);
+  transition: all, ease-in 0.5s;
+}
+.container a i {
+  padding-right: 5px;
+}
+h1 {
+  font-family: 'Dancing Script', cursive;
+}
+#share-p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-style: italic;
+  margin-top: 2.5rem;
+}
+/*========COMPARTILHAMENTO==========*/
+a {
+  text-decoration: none;
+}
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: left;
+
+  margin-top: 1.5rem;
+}
+.list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper :is(.btn, .link) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  color: black;
+  border-radius: 50%;
+  transition: all, ease-out 0.5s;
+}
+.btn {
+  position: absolute;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+  transition: outline 0.25s;
+}
+
+.active .btn,
+.btn:hover {
+  outline: 5px solid var(--bg-color);
+  outline-offset: -4px;
+  transition: all, ease-in 0.1s;
+}
+.item {
+  position: absolute;
+  list-style: none;
+  transition: transform 0.5s;
+  transition-delay: var(--d);
+}
+
+.wrapper.active .item:nth-child(1) {
+  transform: translateX(-65px);
+}
+
+.wrapper.active .item:nth-child(2) {
+  transform: translateY(-65px);
+}
+
+.wrapper.active .item:nth-child(3) {
+  transform: translateX(65px);
+}
+
+.link:hover {
+  color: #fff;
+  transition: background-color 0.25s;
+}
+
+.ig:hover {
+  background-image: radial-gradient(
+    circle at 30% 107%,
+    #fdf497 0%,
+    #fdf497 5%,
+    #fd5949 45%,
+    #d6249f 60%,
+    #285aeb 90%
+  );
+}
+
+.wa:hover {
+  background-color: rgba(53, 146, 53, 0.671);
+}
+
+.gh:hover {
+  background-color: rgba(128, 128, 128, 0.548);
+}
+body.dark .ig:hover {
+  background-image: radial-gradient(
+    circle at 30% 107%,
+    #fdf497 0%,
+    #fdf497 5%,
+    #fd5949 45%,
+    #d6249f 60%,
+    #285aeb 90%
+  );
+}
+
+body.dark .wa:hover {
+  background-color: rgba(53, 146, 53, 0.671);
+}
+
+body.dark .gh:hover {
+  background-color: rgba(128, 128, 128, 0.548);
+}
+
+/*========STAR ANIMATION==========*/
+body {
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  height: 100vh;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
